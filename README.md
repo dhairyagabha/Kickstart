@@ -1,7 +1,5 @@
 # Kickstart Rails Template
 
-*Inspired by Jumpstart by Chris Oliver*
-
 It's like Laravel Spark, for Rails. All your Rails apps should start off with a bunch of great defaults.
 
 **Note:** Requires Rails 5.2 or higher
