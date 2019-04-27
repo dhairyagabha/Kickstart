@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render 'shared/head' %>
+  </head>
+
+  <body>
+    <%= render 'shared/navbar' %>
+    <main class="<%= (yield :body_classes) %>">
+    <%= render 'shared/notices' %>
+      <%= yield %>
+    </main>
+    <%= render 'shared/footer' %>
+    <script crossorigin="anonymous" defer="<%= true %>" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
+  </body>
+</html>

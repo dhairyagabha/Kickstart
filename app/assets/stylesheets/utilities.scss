@@ -1,0 +1,110 @@
+//Text alignment
+.text-left{
+  text-align: left;
+}
+.text-center{
+  text-align: center;
+}
+.text-right{
+  text-align: right;
+}
+//Font Color
+.bg-primary{
+  background-color: #cce5ff;
+}
+.text-primary{
+  color: #004085;
+}
+.bg-secondary{
+  background-color: #e2e3e5;
+}
+.text-secondary{
+  color: #383d41;
+}
+.bg-success{
+  background-color: #d4edda;
+}
+.text-success{
+  color: #155724;
+}
+.bg-danger {
+  background-color: #f8d7da;
+}
+.text-danger {
+  color: #721c24;
+}
+.bg-warning {
+  background-color: #fff3cd;
+}
+.text-warning {
+  color: #856404;
+}
+.bg-info {
+  background-color: #d1ecf1;
+}
+.text-info {
+  color: #0c5460;
+}
+.bg-light {
+  background-color: #fefefe;
+}
+.text-light {
+  color: #818182;
+}
+.bg-dark {
+  background-color: #d6d8d9;
+}
+.text-dark {
+  color: #1b1e21;
+}
+//Float
+.float-right{
+  float: right;
+}
+.float-left{
+  float: left;
+}
+.float-clear{
+  clear: both;
+}
+.float-clear--right{
+  clear: right;
+}
+.float-clear--left{
+  clear: left;
+}
+//Margin
+.m-0{
+  margin: 0;
+}
+.ml-auto{
+  margin-left: auto;
+}
+.mr-auto{
+  margin-right: auto;
+}
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
+.my-auto{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.m-1{
+  margin: 0.25rem;
+}
+//Padding
+.p-0{
+  padding: 0;
+}
+//Errors list
+.errors{
+  padding: 0.5rem;
+  border: 1px solid #721c24;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  p{
+    margin: 0;
+  }
+}

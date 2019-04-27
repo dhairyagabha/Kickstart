@@ -1,0 +1,108 @@
+$card-border: #F8F9FA;
+.card {
+  border-radius: 5px;
+  max-width: 100%;
+  position: relative;
+  .card-header {
+    font-size: 24px;
+    .card-title {
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .card-header, .card-body {
+    padding: 16px;
+  }
+  .card-menu {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    padding: 0.5rem;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.card-shadow {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.table-card {
+  .card-header{
+    display: flex;
+    justify-content: space-between;
+    .card-menu{
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+    }
+    .icon-button{
+      font-size: 18px;
+      margin-right: 10px;
+      color: #000 !important;
+    }
+  }
+  .card-body {
+    padding: 0;
+    .card-table-search {
+      border-top: 1px solid rgba(0, 0, 0, 0.12);
+      height: 48px;
+      position: relative;
+      input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        padding: 6px 12px;
+        font-size: 16px;
+      }
+      .close-search{
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        font-size: 24px;
+      }
+    }
+    table {
+      position: relative;
+      border: 1px solid rgba(0, 0, 0, .12);
+      border-collapse: collapse;
+      white-space: nowrap;
+      font-size: 16px;
+      background-color: #fff;
+      tr {
+        display: table-row;
+      }
+      thead {
+        vertical-align: bottom;
+        padding-bottom: 3px;
+        th {
+          position: relative;
+          vertical-align: bottom;
+          text-overflow: ellipsis;
+          font-weight: 700;
+          line-height: 24px;
+          letter-spacing: 0;
+          height: 48px;
+          font-size: 14px;
+          color: rgba(0, 0, 0, .54);
+          padding-bottom: 8px;
+          box-sizing: border-box;
+        }
+      }
+      td, th {
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 0 !important;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+    }
+  }
+
+}
+
+.card-bordered {
+  border: 2px solid $card-border;
+}

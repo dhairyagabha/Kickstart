@@ -1,0 +1,52 @@
+// Place all the styles related to the guides/videos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.title{
+  font-size: 2rem;
+}
+.subtitle{
+  font-size: 1.2rem;
+}
+.video-guides-collection{
+  padding: 2rem 0;
+  .video-guide{
+    padding: 20px;
+    text-align: left;
+
+    .video-guides-separator{
+      display: block;
+      width: 40%;
+      margin: auto auto;
+      margin-bottom: 40px;
+      border-bottom: 2px solid #F6F6F6;
+    }
+
+    .video-guide-title{
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    .video-guide-description{
+      margin-bottom: 10px;
+    }
+    .video-guide-video{
+      padding: 20px;
+      background: #F8F9FA;
+      border-radius: 5px;
+      box-shadow: 0 1px 10px 0 rgba(0,0,0,0.1);
+      .video-embed{
+        max-width: 100%;
+        padding: 0 0 56.24% 0;
+        position: relative;
+        margin: 0;
+        iframe{
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<div class="video-guide">
+  <div class="video-guides-separator"></div>
+  <div class="row m-0">
+    <div class="col-md-5 col-12">
+      <div class="video-guide-title">
+        <%= video.name %>
+      </div>
+      <div class="video-guide-description">
+        <%= video.description %>
+      </div>
+    </div>
+    <div class="col-md-7 col-12">
+      <div class="video-guide-video">
+        <figure class="video-embed">
+          <iframe allowfullscreen="<%= true %>" frameborder="0" src="<%= video.video_link %>"></iframe>
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>

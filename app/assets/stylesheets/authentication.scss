@@ -1,0 +1,49 @@
+$card-border: #F8F9FA;
+.authentication-card {
+  display: block;
+  margin: auto auto;
+  border: 2px solid $card-border;
+  border-radius: 10px;
+  text-align: center;
+  .ac-body {
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    -o-flex: 1;
+    -khtml-flex: 1;
+    flex: 1 1 auto;
+    padding: 20px;
+    form{
+      display: block;
+      .form-field{
+        width: 100%;
+        margin-bottom: 1rem;
+        text-align: left;
+        label{
+          display: block;
+          margin-bottom: 0.5rem;
+        }
+        input{
+          display: block;
+          width: 100%;
+          width: -moz-available;
+          width: -webkit-fill-available;
+          width: fill-available;
+          padding: .375rem .75rem;
+          font-size: 1rem;
+          line-height: 1.5;
+          color: #495057;
+          background-color: #fff;
+          background-clip: padding-box;
+          border: 1px solid #ced4da;
+          border-radius: .25rem;
+          transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+          font-family: 'Ubuntu', sans-serif;
+        }
+        &.checkbox{
+          display: flex;
+        }
+      }
+    }
+  }
+}
