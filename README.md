@@ -10,7 +10,23 @@ It's like Laravel Spark, for Rails. All your Rails apps should start off with a 
 
 Kickstart is a Rails template, so you pass it in as an option when creating a new app.
 
-#### Requirements
+Features
+-
+
+#### Users
+
+Default configuration in Kickstart adds users to the application using rails devise gem.
+
+- Set up Users
+- Invite Users
+- Users Admin
+- Omniauth Support - Google, Facebook, Twitter
+- Token based authentication supported over API
+
+#### CSS
+Kickstart is built on a custom CSS platform that is in the process of development and will eventually be documented. So until it is documented, please review the css files to apply correct classes.
+
+### Requirements
 
 You'll need the following installed to run the template successfully:
 
@@ -22,7 +38,7 @@ You'll need the following installed to run the template successfully:
 * Foreman (optional) - `gem install foreman` - helps run all your
   processes in development
 
-#### Creating a new app
+### Creating a new app
 
 ```bash
 rails new myapp -d postgresql -m https://raw.githubusercontent.com/dhairyagabha/Kickstart/master/template.rb
