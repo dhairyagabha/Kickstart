@@ -6,8 +6,20 @@ $(document).on 'turbolinks:load', ->
     e.preventDefault()
     return
 
-#  Toggle class active for dropdowns
+  #  Toggle class active for dropdowns
   $('[data-toggle]').on 'click', (e) ->
     $(this).parent().find($(this).data('toggle')).toggleClass 'active'
+    e.preventDefault()
+    return
+
+  # Toggle card search
+  $('.card-menu .search').on 'click', (e) ->
+    $(this).closest('.card').find('.card-table-search').toggleClass 'active'
+    e.preventDefault()
+    return
+
+  # Reset card search
+  $('.card-table-search .close-search').on 'click', (e) ->
+    $(this).closest('input').reset()
     e.preventDefault()
     return
