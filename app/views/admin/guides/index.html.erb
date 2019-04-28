@@ -1,0 +1,93 @@
+<div class="content">
+  <div class="row m-1">
+    <div class="col-12">
+      <div class="card table-card card-shadow">
+        <div class="card-header">
+          <div class="card-title">
+            Guides
+          </div>
+          <div class="card-menu">
+            <%= link_to '#', class:'icon-button search' do %>
+              <i class="fas fa-search"></i>
+            <% end %>
+            <div class="icon-button dropdown">
+              <%= link_to '#', {data:{toggle:'.dropdown-menu', toggle_class:'active'}, class:''} do %>
+                <i class="fas fa-ellipsis-v"></i>
+              <% end %>
+              <ul class="dropdown-menu">
+                <li>
+                  <%= link_to 'New Text Guide', new_guides_video_path %>
+                </li>
+                <li>
+                  <%= link_to 'New Video Guide', new_guides_video_path %>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="tabs">
+            <div class="tabs-header">
+              <%= link_to 'Text Guides', '#', data:{:'tab-toggle' => '#text_guides'}, class:'active' %>
+              <%= link_to 'Video Guides', '#', data:{:'tab-toggle' => '#video_guides'}, class:'' %>
+            </div>
+            <div class="tabs-panels">
+              <div class="tabs-panel active" id="text_guides">
+                <div class="card-table-search">
+                  <%= text_field_tag :search, nil, placeholder: :Search %>
+                  <%= link_to '#',class:'close-search' do %>
+                    &times;
+                  <% end %>
+                </div>
+              </div>
+              <div class="tabs-panel" id="video_guides">
+                <div class="card-table-search">
+                  <%= text_field_tag :search, nil, placeholder: :Search %>
+                  <%= link_to '#',class:'close-search' do %>
+                    &times;
+                  <% end %>
+                </div>
+                <table>
+                  <thead>
+                  <tr>
+                    <th>
+                      Name
+                    </th>
+                    <th>
+                      Link
+                    </th>
+                    <th></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <% if @video_guides.present? %>
+                    <% @video_guides.each do |vg| %>
+                      <tr>
+                        <td class="text-center">
+                          <%= vg.name %>
+                        </td>
+                        <td class="text-center">
+                          <%= link_to 'View Guide', vg.link, target: '_blank' %>
+                        </td>
+                        <td class="text-center">
+                          <%= vg.created_at %>
+                        </td>
+                      </tr>
+                    <% end %>
+                  <% else %>
+                    <tr class="text-center">
+                      <td colspan="3">
+                        No guides created yet!
+                      </td>
+                    </tr>
+                  <% end %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

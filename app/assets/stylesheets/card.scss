@@ -3,21 +3,26 @@ $card-border: #F8F9FA;
   border-radius: 5px;
   max-width: 100%;
   position: relative;
+
   .card-header {
     font-size: 24px;
+
     .card-title {
       padding: 0;
       margin: 0;
     }
   }
+
   .card-header, .card-body {
     padding: 16px;
   }
+
   .card-menu {
     position: absolute;
     right: 16px;
     top: 16px;
     padding: 0.5rem;
+
     a {
       text-decoration: none;
     }
@@ -29,30 +34,36 @@ $card-border: #F8F9FA;
 }
 
 .table-card {
-  .card-header{
+  .card-header {
     display: flex;
     justify-content: space-between;
-    .card-menu{
+
+    .card-menu {
       display: flex;
       justify-content: space-between;
       padding: 0;
-      a{
+
+      a {
         color: black;
       }
     }
-    .icon-button{
+
+    .icon-button {
       font-size: 18px;
       margin-right: 10px;
       color: #000 !important;
     }
   }
+
   .card-body {
     padding: 0;
+
     .card-table-search {
       border-top: 1px solid rgba(0, 0, 0, 0.12);
       height: 48px;
       position: relative;
       display: none;
+
       input {
         width: 100%;
         height: 100%;
@@ -60,29 +71,35 @@ $card-border: #F8F9FA;
         padding: 6px 12px;
         font-size: 16px;
       }
-      .close-search{
+
+      .close-search {
         position: absolute;
         right: 12px;
         top: 12px;
         font-size: 24px;
       }
-      &.active{
+
+      &.active {
         display: block;
       }
     }
+
     table {
       position: relative;
-      border: 1px solid rgba(0, 0, 0, .12);
+      //border: 1px solid rgba(0, 0, 0, .12);
       border-collapse: collapse;
       white-space: nowrap;
       font-size: 16px;
       background-color: #fff;
+
       tr {
         display: table-row;
       }
+
       thead {
         vertical-align: bottom;
         padding-bottom: 3px;
+
         th {
           position: relative;
           vertical-align: bottom;
@@ -97,11 +114,13 @@ $card-border: #F8F9FA;
           box-sizing: border-box;
         }
       }
+
       td, th {
         padding: .75rem;
         vertical-align: top;
         border-top: 0 !important;
       }
+
       tr:nth-child(even) {
         background-color: #f2f2f2;
       }

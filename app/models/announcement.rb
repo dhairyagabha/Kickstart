@@ -3,8 +3,7 @@ class Announcement < ApplicationRecord
 
   after_initialize :set_defaults
 
-  has_attached_file :image
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+  has_rich_text :description
 
   validates :announcement_type, :description, :name, :published_at, presence: true
   validates :announcement_type, inclusion: { in: TYPES }

@@ -1,0 +1,70 @@
+<div class="content">
+  <div class="row m-1">
+    <div class="col-12">
+      <div class="card table-card card-shadow">
+        <div class="card-header">
+          <div class="card-title">
+            Announcements
+          </div>
+          <div class="card-menu">
+            <%= link_to '#', class: 'icon-button search' do %>
+              <i class="fas fa-search"></i>
+            <% end %>
+            <div class="icon-button dropdown">
+              <%= link_to '#', {data: {toggle: '.dropdown-menu', toggle_class: 'active'}, class: ''} do %>
+                <i class="fas fa-ellipsis-v"></i>
+              <% end %>
+              <ul class="dropdown-menu">
+                <li>
+                  <%= link_to 'New Announcement', new_admin_announcement_path %>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-table-search">
+            <%= text_field_tag :search, nil, placeholder: :Search %>
+            <%= link_to '#', class: 'close-search' do %>
+              &times;
+            <% end %>
+          </div>
+          <table>
+            <thead>
+            <tr>
+              <th>
+                Type
+              </th>
+              <th>
+                Name
+              </th>
+              <th>
+                Published At
+              </th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @announcements.each do |a| %>
+              <tr>
+                <td class="text-center">
+                  <%= a.announcement_type.humanize %>
+                </td>
+                <td class="text-center">
+                  <%= a.name %>
+                </td>
+                <td class="text-center">
+                  <%= a.published_at %>
+                </td>
+                <td class="text-center">
+                  <%= link_to 'Edit', edit_admin_announcement_path(a) %>
+                </td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

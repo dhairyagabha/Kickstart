@@ -31,6 +31,7 @@ nav {
     padding: 0.3125rem 10px;
     z-index: 999;
     visibility: visible;
+    width: max-content;
     @include respond-to-max('medium'){
       margin: 0;
     }

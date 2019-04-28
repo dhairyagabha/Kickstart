@@ -195,7 +195,7 @@ def add_sidekiq
 end
 
 def add_announcements
-  generate "model Announcement announcement_type:string name:string description:text published_at:datetime "
+  generate "model Announcement announcement_type:string name:string published_at:datetime "
   route "resources :announcements, only: [:index]"
 end
 
@@ -241,6 +241,21 @@ def add_administrate
     end
     RUBY
   end
+end
+
+def add_admin
+  admin_content = <<-RUBY
+    namespace :admin do
+      resources :guides
+      namespace :guides do
+        resources :videos
+      end
+      resources :announcements
+      resource :dashboard
+      root to: "announcements#index"
+    end
+  RUBY
+  insert_into_file "config/routes.rb", "#Admin Routes \n#{admin_content}\n\n", after: "Rails.application.routes.draw do\n"
 end
 
 def add_multiple_authentication
@@ -307,6 +322,7 @@ after_bundle do
   add_javascript
   add_announcements
   add_guides
+  add_admin
   # add_notifications #Add to users model before enabling "  has_many :notifications, foreign_key: :recipient_id"
   add_multiple_authentication
   add_sidekiq

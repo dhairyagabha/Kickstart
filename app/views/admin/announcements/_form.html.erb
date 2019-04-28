@@ -1,0 +1,23 @@
+<%= form_for announcement, url: announcement.persisted? ? admin_announcement_path(announcement) : admin_announcements_path do |f| %>
+  <%= render partial:'layouts/shared/errors', locals:{target: announcement} if announcement.errors.full_messages.any? %>
+  <div class="form-field">
+    <%= f.label :announcement_type %>
+    <%= f.select :announcement_type, [['New','new'],['Fix','fix'],['Update','update']] %>
+  </div>
+  <div class="form-field">
+    <%= f.label :name %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+  <div class="form-field">
+    <%= f.label :description %>
+    <%= f.text_area :description, rows: 6 %>
+  </div>
+  <div class="form-field">
+    <%= f.label :attachment %>
+    <%= f.file_field :image %>
+  </div>
+  <div class="actions text-center">
+    <%= f.button "Announce", class:'btn btn-block btn-success', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Announcing..."} %>
+    <%= link_to '&larr; Back'.html_safe, :back, class:'btn btn-warning m-1' %>
+  </div>
+<% end %>
