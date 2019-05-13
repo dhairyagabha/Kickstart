@@ -1,0 +1,132 @@
+$breadcrumb-divider: "/";
+.breadcrumb-nav {
+  position: relative;
+  box-shadow: none;
+  background-color: #F8F9FA;
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  z-index: auto;
+  ol, ul {
+    list-style-type: none;
+    padding-inline-start: 20px;
+
+    li {
+      display: inline-block;
+      padding: 1% 0;
+      color: #004085;
+
+      + li:before {
+        display: inline-block;
+        content: $breadcrumb-divider;
+        padding-right: 0.5rem;
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      &.active {
+        color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}
+
+.process-breadcrumbs {
+  position: relative;
+  box-shadow: none;
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  z-index: auto;
+  ul, ol {
+    list-style: none;
+    display: inline-block;
+    padding-inline-start: 0;
+
+    li {
+      float: left;
+      color: #004085;
+      display: block;
+      background: #F8F9FA;
+      text-decoration: none;
+      position: relative;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 10px;
+      text-align: center;
+      margin-right: 23px;
+
+      &.active {
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+
+        &:before {
+          border: none;
+        }
+      }
+
+      &:last-child {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+
+        &:after {
+          border: none;
+        }
+      }
+
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        border: 0 solid #F8F9FA;
+        border-width: 20px 10px;
+        width: 0;
+        height: 0;
+      }
+
+      &:before {
+        left: -20px;
+        border-left-color: transparent;
+      }
+
+      &:after {
+        left: 100%;
+        border-color: transparent;
+        border-left-color: #F8F9FA;
+      }
+
+      &:hover {
+        background-color: rgba(0,0,0,0.2);
+
+        &:before {
+          border-color: rgba(0,0,0,0.2);
+          border-left-color: transparent;
+        }
+
+        &:after {
+          border-left-color: rgba(0,0,0,0.2);
+        }
+      }
+
+      &:active {
+        background-color: rgba(0,0,0,0.2);
+
+        &:before {
+          border-color: rgba(0,0,0,0.2);
+          border-left-color: transparent;
+        }
+
+        &:after {
+          border-left-color: rgba(0,0,0,0.2);
+        }
+      }
+    }
+  }
+}

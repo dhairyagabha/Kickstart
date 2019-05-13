@@ -1,3 +1,18 @@
+<%= content_for :title, 'Privacy' %>
+<%= content_for :secondary_nav do %>
+  <div class="secondary-nav">
+    <ul>
+      <li>
+        <%= link_to 'Terms of Service', terms_path %>
+      </li>
+      <li class="nav-link-active">
+        <%= link_to 'Privacy Policy', privacy_path %>
+      </li>
+    </ul>
+  </div>
+<% end %>
+<%= content_for :body_classes, 'secondary-nav-content' %>
+
 <div class='content'>
   <h1 class='page-title'>
     Privacy Policy

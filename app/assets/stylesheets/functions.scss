@@ -1,9 +1,11 @@
 $breakpoints: (
-        'small': 576px,
-        'medium': 767px,
-        'large': 992px,
-        'xlarge': 1200px
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px
 ) !default;
+$displays: none, inline, inline-block, block, table, table-row, table-cell, flex, inline-flex !default;
 
 @mixin respond-to($breakpoint) {
   // If the key exists in the map
@@ -34,5 +36,254 @@ $breakpoints: (
   @else {
     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
         + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+//Breakpoints Mixins
+@function breakpoint-next($name, $breakpoints: $breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+  $n: index($breakpoint-names, $name);
+  @return if($n != null and $n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+// Minimum breakpoint width. Null for the smallest (first) breakpoint.
+//
+//    >> breakpoint-min(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    576px
+@function breakpoint-min($name, $breakpoints: $breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+
+// Maximum breakpoint width. Null for the largest (last) breakpoint.
+// The maximum value is calculated as the minimum of the next one less 0.02px
+// to work around the limitations of `min-` and `max-` prefixes and viewports with fractional widths.
+// See https://www.w3.org/TR/mediaqueries-4/#mq-min-max
+// Uses 0.02px rather than 0.01px to work around a current rounding bug in Safari.
+// See https://bugs.webkit.org/show_bug.cgi?id=178261
+//
+//    >> breakpoint-max(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    767.98px
+@function breakpoint-max($name, $breakpoints: $breakpoints) {
+  $next: breakpoint-next($name, $breakpoints);
+  @return if($next, breakpoint-min($next, $breakpoints) - .02, null);
+}
+
+// Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front.
+// Useful for making responsive utilities.
+//
+//    >> breakpoint-infix(xs, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    ""  (Returns a blank string)
+//    >> breakpoint-infix(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    "-sm"
+@function breakpoint-infix($name, $breakpoints: $breakpoints) {
+  @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+}
+
+// Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
+// Makes the @content apply to the given breakpoint and wider.
+@mixin media-breakpoint-up($name, $breakpoints: $breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+// Media of at most the maximum breakpoint width. No query for the largest breakpoint.
+// Makes the @content apply to the given breakpoint and narrower.
+@mixin media-breakpoint-down($name, $breakpoints: $breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+// Media that spans multiple breakpoint widths.
+// Makes the @content apply between the min and max breakpoints
+@mixin media-breakpoint-between($lower, $upper, $breakpoints: $breakpoints) {
+  $min: breakpoint-min($lower, $breakpoints);
+  $max: breakpoint-max($upper, $breakpoints);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include media-breakpoint-up($lower, $breakpoints) {
+      @content;
+    }
+  } @else if $min == null {
+    @include media-breakpoint-down($upper, $breakpoints) {
+      @content;
+    }
+  }
+}
+
+// Media between the breakpoint's minimum and maximum widths.
+// No minimum for the smallest breakpoint, and no maximum for the largest one.
+// Makes the @content apply only to the given breakpoint, not viewports any wider or narrower.
+@mixin media-breakpoint-only($name, $breakpoints: $breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  $max: breakpoint-max($name, $breakpoints);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include media-breakpoint-up($name, $breakpoints) {
+      @content;
+    }
+  } @else if $min == null {
+    @include media-breakpoint-down($name, $breakpoints) {
+      @content;
+    }
+  }
+}
+
+// Flexbox Functions
+@each $breakpoint in map-keys($breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    .flex#{$infix}-row {
+      flex-direction: row !important;
+    }
+    .flex#{$infix}-column {
+      flex-direction: column !important;
+    }
+    .flex#{$infix}-row-reverse {
+      flex-direction: row-reverse !important;
+    }
+    .flex#{$infix}-column-reverse {
+      flex-direction: column-reverse !important;
+    }
+
+    .flex#{$infix}-wrap {
+      flex-wrap: wrap !important;
+    }
+    .flex#{$infix}-nowrap {
+      flex-wrap: nowrap !important;
+    }
+    .flex#{$infix}-wrap-reverse {
+      flex-wrap: wrap-reverse !important;
+    }
+    .flex#{$infix}-fill {
+      flex: 1 1 auto !important;
+    }
+    .flex#{$infix}-grow-0 {
+      flex-grow: 0 !important;
+    }
+    .flex#{$infix}-grow-1 {
+      flex-grow: 1 !important;
+    }
+    .flex#{$infix}-shrink-0 {
+      flex-shrink: 0 !important;
+    }
+    .flex#{$infix}-shrink-1 {
+      flex-shrink: 1 !important;
+    }
+
+    .justify-content#{$infix}-start {
+      justify-content: flex-start !important;
+    }
+    .justify-content#{$infix}-end {
+      justify-content: flex-end !important;
+    }
+    .justify-content#{$infix}-center {
+      justify-content: center !important;
+    }
+    .justify-content#{$infix}-between {
+      justify-content: space-between !important;
+    }
+    .justify-content#{$infix}-around {
+      justify-content: space-around !important;
+    }
+
+    .align-items#{$infix}-start {
+      align-items: flex-start !important;
+    }
+    .align-items#{$infix}-end {
+      align-items: flex-end !important;
+    }
+    .align-items#{$infix}-center {
+      align-items: center !important;
+    }
+    .align-items#{$infix}-baseline {
+      align-items: baseline !important;
+    }
+    .align-items#{$infix}-stretch {
+      align-items: stretch !important;
+    }
+
+    .align-content#{$infix}-start {
+      align-content: flex-start !important;
+    }
+    .align-content#{$infix}-end {
+      align-content: flex-end !important;
+    }
+    .align-content#{$infix}-center {
+      align-content: center !important;
+    }
+    .align-content#{$infix}-between {
+      align-content: space-between !important;
+    }
+    .align-content#{$infix}-around {
+      align-content: space-around !important;
+    }
+    .align-content#{$infix}-stretch {
+      align-content: stretch !important;
+    }
+
+    .align-self#{$infix}-auto {
+      align-self: auto !important;
+    }
+    .align-self#{$infix}-start {
+      align-self: flex-start !important;
+    }
+    .align-self#{$infix}-end {
+      align-self: flex-end !important;
+    }
+    .align-self#{$infix}-center {
+      align-self: center !important;
+    }
+    .align-self#{$infix}-baseline {
+      align-self: baseline !important;
+    }
+    .align-self#{$infix}-stretch {
+      align-self: stretch !important;
+    }
+  }
+}
+
+//Display
+@each $breakpoint in map-keys($breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    @each $value in $displays {
+      .d#{$infix}-#{$value} {
+        display: $value !important;
+      }
+    }
+  }
+}
+
+
+//
+// Utilities for toggling `display` in print
+//
+@media print {
+  @each $value in $displays {
+    .d-print-#{$value} {
+      display: $value !important;
+    }
   }
 }

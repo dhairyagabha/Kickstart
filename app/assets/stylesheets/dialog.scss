@@ -1,0 +1,113 @@
+.dialog-container {
+  display: none;
+
+  &.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999999;
+  }
+
+  .dialog-box {
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+    width: fit-content;
+    max-width: 80vw;
+    max-height: 80vh;
+    background-color: #ffffff;
+    overflow: scroll;
+
+    .dialog-box-header {
+      font-size: 24px;
+
+      .dialog-box-title {
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    .dialog-box-header, .dialog-box-body, .dialog-box-actions {
+      padding: 16px;
+    }
+
+    .dialog-box-body {
+      display: block;
+      position: relative;
+      overflow: scroll;
+      max-height: 60vh;
+      p {
+        margin-top: 0;
+      }
+    }
+
+    &.dialog-primary{
+      border: 1.5px solid #004085;
+      .dialog-box-header{
+        color: #004085;
+        background-color: #cce5ff;
+      }
+    }
+    &.dialog-secondary {
+      border: 1.5px solid #383d41;
+      .dialog-box-header{
+        color: #383d41;
+        background-color: #e2e3e5;
+      }
+    }
+
+    &.dialog-success {
+      border: 1.5px solid #155724;
+      .dialog-box-header{
+        color: #155724;
+        background-color: #d4edda;
+      }
+    }
+
+    &.dialog-danger {
+      border: 1.5px solid #721c24;
+      .dialog-box-header{
+        color: #721c24;
+        background-color: #f8d7da;
+      }
+    }
+
+    &.dialog-warning {
+      border: 1.5px solid #856404;
+      .dialog-box-header{
+        color: #856404;
+        background-color: #fff3cd;
+      }
+    }
+
+    &.dialog-info {
+      border: 1.5px solid #0c5460;
+      .dialog-box-header{
+        color: #0c5460;
+        background-color: #d1ecf1;
+      }
+    }
+
+    &.dialog-light {
+      border: 1.5px solid #818182;
+      .dialog-box-header{
+        color: #818182;
+        background-color: #fefefe;
+      }
+    }
+
+    &.dialog-dark {
+      border: 1.5px solid #1b1e21;
+      .dialog-box-header{
+        color: #1b1e21;
+        background-color: #d6d8d9;
+      }
+    }
+  }
+}

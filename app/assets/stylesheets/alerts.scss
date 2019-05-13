@@ -4,8 +4,13 @@
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 10px;
+  align-content: center;
+  -webkit-transition: opacity 3s ease-in-out;
+  -moz-transition: opacity 3s ease-in-out;
+  -ms-transition: opacity 3s ease-in-out;
+  -o-transition: opacity 3s ease-in-out;
+  opacity: 1;
   [data-dismiss='alert']{
     font-size: 1.5rem;
   }

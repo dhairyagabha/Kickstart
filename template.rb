@@ -9,7 +9,7 @@ require "shellwords"
 def add_template_repository_to_source_path
   if __FILE__ =~ %r{\Ahttps?://}
     require "tmpdir"
-    source_paths.unshift(tempdir = Dir.mktmpdir("jumpstart-"))
+    source_paths.unshift(tempdir = Dir.mktmpdir("kickstart-"))
     at_exit {FileUtils.remove_entry(tempdir)}
     git clone: [
         "--quiet",
@@ -17,7 +17,7 @@ def add_template_repository_to_source_path
         tempdir
     ].map(&:shellescape).join(" ")
 
-    if (branch = __FILE__[%r{jumpstart/(.+)/template.rb}, 1])
+    if (branch = __FILE__[%r{kickstart/(.+)/template.rb}, 1])
       Dir.chdir(tempdir) {git checkout: branch}
     end
   else
@@ -40,15 +40,23 @@ end
 def add_gems
   # gem 'administrate', github: "excid3/administrate", branch: "zeitwerk"
   # gem 'bootstrap', '~> 4.3', '>= 4.3.1'
+  #
+  #  Authentication and User Management
   gem 'devise', '~> 4.6', '>= 4.6.1'
   gem 'devise_invitable', '~> 2.0.0'
-  # gem 'devise-bootstrapped', github: 'excid3/devise-bootstrapped', branch: 'bootstrap4'
   gem 'devise_masquerade', '~> 0.6.2'
+  # gem 'devise-bootstrapped', github: 'excid3/devise-bootstrapped', branch: 'bootstrap4'
+
   gem 'font-awesome-sass', '~> 5.6', '>= 5.6.1'
+
   gem 'friendly_id', '~> 5.2', '>= 5.2.5'
+
   gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
+
   gem 'mini_magick', '~> 4.9', '>= 4.9.2'
+
   gem 'name_of_person', '~> 1.1'
+
   gem 'omniauth-facebook', '~> 5.0'
   gem 'omniauth-github', '~> 1.3'
   gem 'omniauth-twitter', '~> 1.4'
@@ -195,7 +203,7 @@ def add_sidekiq
 end
 
 def add_announcements
-  generate "model Announcement announcement_type:string name:string published_at:datetime "
+  generate "model Announcement announcement_type:string name:string published_at:datetime"
   route "resources :announcements, only: [:index]"
 end
 
