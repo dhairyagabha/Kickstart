@@ -1,7 +1,6 @@
 .alert{
-  margin-bottom: 0;
-  display: flex;
-  justify-content: space-between;
+  margin-bottom: 1rem;
+  display: block;
   align-items: center;
   border-radius: 5px;
   padding: 10px;
@@ -11,6 +10,17 @@
   -ms-transition: opacity 3s ease-in-out;
   -o-transition: opacity 3s ease-in-out;
   opacity: 1;
+  a{
+    color: inherit;
+    font-weight: bold;
+  }
+  .alert-heading{
+    margin: 0;
+  }
+  hr{
+    border: solid;
+    border-width: 0.5px;
+  }
   [data-dismiss='alert']{
     font-size: 1.5rem;
   }
