@@ -19,7 +19,7 @@
               <%= f.password_field :password_confirmation, placeholder: :password_confirmation, autocomplete: "off" %>
             </div>
             <div class="actions">
-              <%= f.submit "Sign up", class: 'btn btn-block', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Signing up..."} %>
+              <%= button_tag "Sign up", type: :submit, class: "btn btn-success-outline btn-block", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Signing up..."} %>
             </div>
           <% end %>
           <%= render "devise/shared/links" %>
