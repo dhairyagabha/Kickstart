@@ -1,0 +1,259 @@
+<div class="tabs-panel  <%= @component == 'buttons' ? 'active' : '' %>" id="Buttons">
+  <h2>Buttons</h2>
+  <p><strong>INTRODUCTION</strong></p>
+  <p>The Kickstart <b>button</b> component is an enhanced version of the standard HTML button
+    element. A button consists of text and/or an image that clearly communicates what action will occur when the user
+    clicks or touches it.</p>
+  <p>
+    Buttons are ubiquitous feature of most user interfaces, regardless of a site's content or function. Their design and
+    use is therefore an important factor in the overall user experience.
+  </p>
+  <p>
+    The available button display types are flat (default), raised, fab, mini-fab, and icon; any of these types may be
+    plain(light gray) or colored, and may be initially or programmatically disabled. The fab, mini-fab, and icon button
+    types typically use a small image as their caption rather than text.
+  </p>
+  <p>
+    A badge is almost always positioned near a link so that the user has a convenient way to access the
+    additional information indicated by the badge. However, depending on the intent, the badge itself may or may
+    not be part of the link.
+  </p>
+  <p>
+    Badges are a new feature in user interfaces, and provide users with a visual clue to help them discover
+    additional relevant content. Their design and use is therefore an important factor in the overall user
+    experience.
+  </p>
+  <p><strong>SAMPLES</strong></p>
+  <div class="text-center row justify-content-center">
+    <div class="col-12 text-left"><p><b>Flat Button</b></p></div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-primary' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-secondary' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-success' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-danger' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-warning' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-info' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-light' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-dark' %>
+    </div>
+    <div class="col-12 text-left">
+      <iframe width="100%" height="300" src="//jsfiddle.net/dgabhawala/omzx0ga3/embedded/html/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+    </div>
+  </div>
+  <div class="text-center row justify-content-center">
+    <div class="col-12 text-left"><p><b>Flat Outline Button</b></p></div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-primary-outline' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-secondary-outline' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-success-outline' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-danger-outline' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-warning-outline' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-info-outline' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-light-outline' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-dark-outline' %>
+    </div>
+    <div class="col-12 text-left">
+      <iframe width="100%" height="300" src="//jsfiddle.net/dgabhawala/gbL02p6m/embedded/html/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+    </div>
+  </div>
+  <div class="text-center row justify-content-center">
+    <div class="col-12 text-left">
+      <p><b>Raised Buttons</b></p>
+      <p>Raised buttons can be combined with colors as well as outline buttons.</p>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-primary btn-raised' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-secondary btn-raised' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-success btn-raised' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-danger btn-raised' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-warning btn-raised' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-info btn-raised' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-light btn-raised' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to 'Button', '#', class: 'btn btn-dark btn-raised' %>
+    </div>
+    <div class="col-12 text-left">
+      <iframe width="100%" height="300" src="//jsfiddle.net/dgabhawala/cLpmj5wz/embedded/html/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+    </div>
+  </div>
+  <div class="text-center row justify-content-center">
+    <div class="col-12 text-left"><p><b>Flat Fab Button</b></p></div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-primary' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-secondary' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-success' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-danger' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-warning' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-info' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-light' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-dark' %>
+    </div>
+    <div class="col-12 text-left">
+      <iframe width="100%" height="300" src="//jsfiddle.net/dgabhawala/9gyehfmL/1/embedded/html/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+    </div>
+  </div>
+  <div class="text-center row justify-content-center">
+    <div class="col-12 text-left"><p><b>Flat Fab Outline Button</b></p></div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-primary-outline' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-secondary-outline' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-success-outline' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-danger-outline' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-warning-outline' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-info-outline' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-light-outline' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-dark-outline' %>
+    </div>
+    <div class="col-12 text-left">
+      <iframe width="100%" height="300" src="//jsfiddle.net/dgabhawala/5ymhejzn/embedded/html/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+    </div>
+  </div>
+  <div class="text-center row justify-content-center">
+    <div class="col-12 text-left">
+      <p><b>Raised Fab Buttons</b></p>
+      <p>Raised buttons can be combined with colors as well as outline buttons.</p>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-primary btn-raised' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-secondary btn-raised' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-success btn-raised' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-danger btn-raised' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-warning btn-raised' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-info btn-raised' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-light btn-raised' %>
+    </div>
+    <div class="text-center col">
+      <%= link_to '<i class="fas fa-plus"></i>'.html_safe, '#', class: 'btn btn-fab btn-dark btn-raised' %>
+    </div>
+    <div class="col-12 text-left">
+      <iframe width="100%" height="300" src="//jsfiddle.net/dgabhawala/baLmjtqz/embedded/html/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+    </div>
+  </div>
+  <p>TO INCLUDE A <b>KICKSTART BUTTON</b> COMPONENT:</p>
+  <ol>
+    <li>
+      Code a <pre>button</pre> element. Include any desired attributes and values, such as an id or event handler, and add a text caption or image as appropriate.
+    </li>
+    <pre>&lt;button&gt;Save&lt;/button&gt;</pre>
+    <li>
+      Add one or more Kickstart separated by spaces, to the button using the <pre>class</pre> attribute.
+    </li>
+    <pre>&lt;button class=&quot;btn btn-primary btn-raised&quot; &gt;Inbox&lt;/button&gt;</pre>
+    <p>The button component is ready to use.</p>
+  </ol>
+  <p>CONFIGURATION OPTIONS</p>
+  <p>The Kickstart CSS classes apply various predefined visual enhancements to the button. The table below lists
+    the available classes and their effects.</p>
+  <table>
+    <thead>
+    <tr>
+      <th>Class</th>
+      <th>Effect</th>
+      <th>Remarks</th>
+    </thead>
+    <tbody>
+    <tr>
+      <td><span><pre>btn</pre></span></td>
+      <td>Defines btn as Kickstart component</td>
+      <td>Required on an element</td>
+    </tr>
+    <tr>
+      <td><span><pre>btn-raised</pre></span></td>
+      <td>Applies <i>raised</i> display effect</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><span><pre>btn-fab</pre></span></td>
+      <td>Applies <i>fab</i> (circular) display effect</td>
+      <td>Optional</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

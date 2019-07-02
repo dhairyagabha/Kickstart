@@ -10,11 +10,7 @@
   </div>
   <div class="form-field">
     <%= f.label :description %>
-    <%= f.text_area :description, rows: 6 %>
-  </div>
-  <div class="form-field">
-    <%= f.label :attachment %>
-    <%= f.file_field :image %>
+    <%= f.rich_text_area :description, rows: 6 %>
   </div>
   <div class="actions text-center">
     <%= f.button "Announce", class:'btn btn-block btn-success', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Announcing..."} %>

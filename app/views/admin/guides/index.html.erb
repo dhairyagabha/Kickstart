@@ -16,10 +16,10 @@
               <% end %>
               <ul class="dropdown-menu">
                 <li>
-                  <%= link_to 'New Text Guide', new_guides_video_path %>
+                  <%= link_to 'New Text Guide', new_admin_guides_text_path %>
                 </li>
                 <li>
-                  <%= link_to 'New Video Guide', new_guides_video_path %>
+                  <%= link_to 'New Video Guide', new_admin_guides_video_path %>
                 </li>
               </ul>
             </div>
@@ -39,6 +39,43 @@
                     &times;
                   <% end %>
                 </div>
+                <table>
+                  <thead>
+                  <tr>
+                    <th>
+                      Name
+                    </th>
+                    <th class="text-center">
+                      Published At
+                    </th>
+                    <th></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <% if @text_guides.present? %>
+                    <% @text_guides.each do |tg| %>
+                      <tr>
+                        <td class="text-center">
+                          <%= tg.title %>
+                        </td>
+                        <td class="text-center">
+                          <%= tg.published_at.strftime('%B %d, %Y %H:%m') %>
+                        </td>
+                        <td class="text-center">
+                          <%= link_to 'Edit', edit_admin_guides_text_path(tg) %>
+                        </td>
+                      </tr>
+                    <% end %>
+                  <% else %>
+                    <tr class="text-center">
+                      <td colspan="3">
+                        No guides created yet!
+                      </td>
+                    </tr>
+                  <% end %>
+                  </tbody>
+                </table>
+
               </div>
               <div class="tabs-panel" id="video_guides">
                 <div class="card-table-search">
@@ -63,14 +100,14 @@
                   <% if @video_guides.present? %>
                     <% @video_guides.each do |vg| %>
                       <tr>
-                        <td class="text-center">
-                          <%= vg.name %>
+                        <td>
+                          <%= vg.title %>
+                        </td>
+                        <td>
+                          <%= link_to 'View Guide', vg.video_link, target: '_blank' %>
                         </td>
                         <td class="text-center">
-                          <%= link_to 'View Guide', vg.link, target: '_blank' %>
-                        </td>
-                        <td class="text-center">
-                          <%= vg.created_at %>
+                          <%= link_to 'Edit', edit_admin_guides_video_path(vg) %>
                         </td>
                       </tr>
                     <% end %>

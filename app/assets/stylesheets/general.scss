@@ -20,6 +20,7 @@ html {
 
   body {
     margin: 0px;
+    line-height: 150%;
     font-family: $general-font-family;
   }
 }
@@ -42,6 +43,7 @@ nav {
     @include respond-to('md') {
       display: flex;
       justify-content: space-between;
+      align-items: baseline;
     }
   }
 

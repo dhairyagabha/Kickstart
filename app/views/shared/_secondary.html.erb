@@ -1,0 +1,15 @@
+<%= content_for :secondary_nav do %>
+  <div class="secondary-nav">
+    <ul>
+      <li class="<%= 'nav-link-active' if link_active == 'About' %>"><%= link_to 'About', root_path %></li>
+      <li class="<%= 'nav-link-active' if link_active == 'Getting' %>"><%= link_to 'Getting Started', get_started_path %></li>
+<!--      <li class="<%#= 'nav-link-active' if link_active == 'Templates' %>"><%#= link_to 'Templates', terms_path %></li>-->
+      <li class="<%= 'nav-link-active' if link_active == 'Components' %>"><%= link_to 'Components', components_path %></li>
+      <li class="<%= 'nav-link-active' if link_active == 'Styles' %>"><%= link_to 'Styles', terms_path %></li>
+      <li class="<%= 'nav-link-active' if link_active == 'Customize' %>"><%= link_to 'Customize', terms_path %></li>
+      <li class="<%= 'nav-link-active' if link_active == 'Showcase' %>"><%= link_to 'Showcase', terms_path %></li>
+      <li class="<%= 'nav-link-active' if link_active == 'FAQ' %>"><%= link_to 'FAQ', terms_path %></li>
+      <li><%= link_to '<i class="fab fa-github"></i> &nbsp; Github'.html_safe, 'https://github.com/dhairyagabha/Kickstart', target: '_blank' %></li>
+    </ul>
+  </div>
+<% end %>

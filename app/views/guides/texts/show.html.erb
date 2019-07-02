@@ -1,0 +1,16 @@
+<div class="content">
+  <div class="container">
+    <div class="text-right">
+      <%= link_to 'Back', guides_texts_path, class:'btn btn-dark-outline' %>
+    </div>
+    <h1 class="title">
+      <%= @guides_text.title %>
+    </h1>
+    <p class="subtitle">
+      Published By <%= @guides_text.user.name %> | Last Updated at <%= @guides_text.updated_at.strftime('%B %d, %Y %H:%m %p') %>
+    </p>
+    <div>
+      <%= @guides_text.content %>
+    </div>
+  </div>
+</div>

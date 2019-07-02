@@ -1,0 +1,40 @@
+<%= form_for(guides_text, url: admin_guides_texts_url) do |form| %>
+<% if guides_text.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(guides_text.errors.count, "error") %> prohibited this guides_text from being saved:</h2>
+
+  <ul>
+    <% guides_text.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+  <div class="form-field">
+          <%= form.label :title %>
+      <%= form.text_field :title, autofocus: true %>
+        </div>
+
+  <div class="form-field">
+    <%= form.label :content %>
+    <%= form.rich_text_area :content %>
+  </div>
+
+<div class="actions">
+  <%= form.button "Publish", class:'btn btn-success', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Publishing..."} %>
+  <%= form.button "Save Draft", class:'btn btn-primary', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Publishing..."} if guides_text.published_at.nil?%>
+
+  <% if guides_text.persisted? %>
+    <%= link_to "Cancel", admin_guides_text_path(guides_text), class: "btn btn-link" %>
+  <% else %>
+  <%= link_to "Cancel", admin_guides_texts_path, class: "btn btn-link" %>
+  <% end %>
+
+  <% if guides_text.persisted? %>
+    <div class="float-right">
+      <%= link_to 'Destroy', guides_text, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
+
+</div>
+<% end %>

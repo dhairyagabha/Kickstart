@@ -1,0 +1,110 @@
+<div class="tabs-panel <%= @component == 'badges' ? 'active' : '' %>" id="Badges">
+  <h2>Badges</h2>
+  <p><strong>INTRODUCTION</strong></p>
+  <p>
+    The Kickstart <b>badge</b> components is an onscreen notification element. A badge consists of a small
+    circle, typically containing a number or other characters, that appears in proximit to another object. A
+    badge
+    can be both a notifier that there are additional items associated with an object and an indicator of how
+    many
+    items there are.
+  </p>
+  <p>
+    You can use a badge to unobtrusively draw the user's attention to items they might not otherwise notice, or
+    to
+    emphasize that items may need their attention. For example:
+  </p>
+  <ul>
+    <li>A "New messages" notification might be followed by a badge containing the number of unread messages.
+    </li>
+    <li>A "You have unpurchased items in your shopping cart" reminder might include a badge showing the number
+      of
+      items in the cart.
+    </li>
+    <li>A "Join the discussion!" button might have an accompanying badge indicating the number of users
+      currently
+      participating in the discussion.
+    </li>
+  </ul>
+  <p>
+    A badge is almost always positioned near a link so that the user has a convenient way to access the
+    additional information indicated by the badge. However, depending on the intent, the badge itself may or may
+    not be part of the link.
+  </p>
+  <p>
+    Badges are a new feature in user interfaces, and provide users with a visual clue to help them discover
+    additional relevant content. Their design and use is therefore an important factor in the overall user
+    experience.
+  </p>
+  <p><strong>SAMPLES</strong></p>
+  <div class="row justify-content-center">
+    <div class="text-center col-6">
+      <span class="badge" data-badge="1">Inbox</span>
+    </div>
+    <div class="text-center col-6">
+      <span class="badge" data-badge="&hearts;">Mood</span>
+    </div>
+    <div class="col-12">
+      <iframe width="100%" height="200" src="//jsfiddle.net/dgabhawala/2je14vbL/embedded/html/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="text-center col-6">
+      <span class="badge badge-overlap" data-badge="1"><i class="fas fa-user-circle"></i></span>
+    </div>
+    <div class="text-center col-6">
+      <span class="badge badge-overlap" data-badge="&hearts;"><i class="fas fa-user-circle"></i></span>
+    </div>
+    <div class="col-12">
+      <iframe width="100%" height="200" src="//jsfiddle.net/dgabhawala/ft37p1ku/embedded/html/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+    </div>
+  </div>
+  <p>TO INCLUDE A <b>BADGE</b> COMPONENT:</p>
+  <ol>
+    <li>
+      Create an element, link, span, or icon, etc. Include any desired attributes and content.
+    </li>
+    <pre>&lt;span class=&quot;text-primary&quot;&gt;Inbox&lt;/span&gt;</pre>
+    <li>
+      Add the one or more Kickstart classes, separated by spaces, to the element using the class attribute. Also
+      add class
+      <pre>badge</pre>
+      for badges.
+    </li>
+    <pre>&lt;span class=&quot;text-primary badge&quot;&gt;Inbox&lt;/span&gt;</pre>
+    <li>
+      Add a
+      <pre>data-badge</pre>
+      attribute and quoted string value for the badge.
+    </li>
+    <pre>&lt;span class=&quot;text-primary badge&quot; data-badge=&quot;1&quot;&gt;Inbox&lt;/span&gt;</pre>
+  </ol>
+  <p>CONFIGURATION OPTIONS</p>
+  <p>The Kickstart CSS classes apply varipous predefined visual enhancements to the badge. The table below lists
+    the available classes and their effects.</p>
+  <table>
+    <thead>
+    <tr>
+      <th>Class</th>
+      <th>Effect</th>
+      <th>Remarks</th>
+    </thead>
+    <tbody>
+    <tr>
+      <td><span><pre>badge</pre></span></td>
+      <td>Defines badge component</td>
+      <td>Required on an element</td>
+    </tr>
+    <tr>
+      <td><span><pre>badge-overlap</pre></span></td>
+      <td>Make the badge overlap with its container</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><span><pre>data-badge="value"</pre></span></td>
+      <td>Assings a string value to the badge</td>
+      <td>Separate attribute required on an element</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

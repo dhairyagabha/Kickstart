@@ -7,4 +7,18 @@ class HomeController < ApplicationController
 
   def privacy
   end
+
+  def get_started
+
+  end
+
+  def components
+    @component = params[:component] || 'alerts'
+  end
+
+  #   Components rendering actions
+  def badges
+
+  end
+
 end

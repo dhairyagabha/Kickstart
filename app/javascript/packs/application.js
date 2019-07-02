@@ -9,10 +9,13 @@ require("@rails/activestorage").start()
 require("channels")
 require("local-time").start()
 require("trix");
+require('./trix-customizations')
 require("@rails/actiontext");
 require('./general')
 require('./tabs')
 require('./dialogs')
+require('./alerts')
+require('./navbar')
 
 window.Rails = Rails
 

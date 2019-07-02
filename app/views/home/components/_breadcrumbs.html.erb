@@ -1,0 +1,122 @@
+<div class="tabs-panel <%= @component == 'breadcrumbs' ? 'active' : '' %>" id="Breadcrumbs">
+  <h2>Breadcrumbs</h2>
+  <p><strong>INTRODUCTION</strong></p>
+  <p>
+    The Kickstart <b>breadcrumb</b> component is designed to display current location of the user in the hierarchy of
+    pages or process steps. Separators and other designs are added by css.
+  </p>
+  <p><strong>SAMPLES</strong></p>
+  <p>BASIC BREADCRUMBS</p>
+  <div class="row">
+    <div class="col-12">
+      <nav class="breadcrumb-nav">
+        <ol class="breadcrumb">
+          <li class="active">Home</li>
+        </ol>
+      </nav>
+      <nav class="breadcrumb-nav">
+        <ol class="breadcrumb">
+          <li>Home</li>
+          <li class="active">Library</li>
+        </ol>
+      </nav>
+      <nav class="breadcrumb-nav">
+        <ol class="breadcrumb">
+          <li>Home</li>
+          <li>Library</li>
+          <li class="active">Data</li>
+        </ol>
+      </nav>
+      <iframe width="100%" height="400" src="//jsfiddle.net/dgabhawala/x0couwsL/1/embedded/html/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+    </div>
+  </div>
+  <p>BASIC BREADCRUMBS</p>
+  <div class="row">
+    <div class="col-12">
+      <nav class="process-breadcrumbs">
+        <ol class="breadcrumb">
+          <li class="active"><i class="fas fa-home"></i> &nbsp;&nbsp;Home</li>
+        </ol>
+      </nav>
+      <nav class="process-breadcrumbs">
+        <ol class="breadcrumb">
+          <li><i class="fas fa-home"></i> &nbsp;&nbsp;Home</li>
+          <li class="active"><i class="fas fa-store-alt"></i> &nbsp;&nbsp;Shop</li>
+        </ol>
+      </nav>
+      <nav class="process-breadcrumbs">
+        <ol>
+          <li><i class="fas fa-home"></i> &nbsp;&nbsp;Home</li>
+          <li><i class="fas fa-store-alt"></i> &nbsp;&nbsp;Shop</li>
+          <li class="active"><i class="fas fa-shopping-cart"></i> &nbsp;&nbsp;Cart</li>
+        </ol>
+      </nav>
+      <nav class="process-breadcrumbs">
+        <ol>
+          <li><i class="fas fa-home"></i> &nbsp;&nbsp;Home</li>
+          <li><i class="fas fa-store-alt"></i> &nbsp;&nbsp;Shop</li>
+          <li><i class="fas fa-shopping-cart"></i> &nbsp;&nbsp;Cart</li>
+          <li class="active"><i class="far fa-credit-card"></i> &nbsp;&nbsp;Checkout</li>
+        </ol>
+      </nav>
+      <iframe width="100%" height="550" src="//jsfiddle.net/dgabhawala/9m87djzg/2/embedded/html/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+    </div>
+  </div>
+  <p>TO INCLUDE A <b>BREADCRUMB</b> COMPONENT:</p>
+  <ol>
+    <li>
+      Create a nav element with nested list element - ordered or unordered. Include any desired attributes and content.
+    </li>
+    <pre>&lt;nav&gt;&lt;ol&gt;&lt;/ol&gt;&lt;/nav&gt;</pre>
+    <li>
+      Add the one or more Kickstart classes, separated by spaces, to the element using the class attribute. Also
+      add class
+      <pre>breadcrumb-nav</pre>
+      or
+      <pre>process-breadcrumb</pre>
+      for step by step actions.
+      for badges.
+    </li>
+    <pre>&lt;nav class=&quot;breadcrumb-nav&quot;&gt;&lt;ol class=&quot;breadcrumb&quot;&gt;&lt;/ol&gt;&lt;/nav&gt;</pre>
+    <pre>&lt;nav class=&quot;process-breadcrumb&quot;&gt;&lt;ol class=&quot;breadcrumb&quot;&gt;&lt;/ol&gt;&lt;/nav&gt;</pre>
+    <li>
+      List items in
+      <pre>breadcrumb-nav</pre>
+      will behave as simple breadcrumb, list items
+      <pre>process-breadcrumb</pre>
+      will behave as step by step breadcrumbs.
+    </li>
+  </ol>
+  <p>CONFIGURATION OPTIONS</p>
+  <p>The Kickstart CSS classes apply various predefined visual enhancements to the badge. The table below lists
+    the available classes and their effects.</p>
+  <table>
+    <thead>
+    <tr>
+      <th>Class</th>
+      <th>Effect</th>
+      <th>Remarks</th>
+    </thead>
+    <tbody>
+    <tr>
+      <td><span><pre>breadcrumb-nav</pre></span></td>
+      <td>Defines breadcrumb nav component</td>
+      <td>Required on a nav element<br>Mutually exclusive with
+        <pre>.process-breadcrumb</pre>
+      </td>
+    </tr>
+    <tr>
+      <td><span><pre>process-breadcrumb</pre></span></td>
+      <td>Defines process breadcrumb nav component</td>
+      <td>Required on a nav element<br>Mutually exclusive with
+        <pre>.process-breadcrumb</pre>
+      </td>
+    </tr>
+    <tr>
+      <td><span><pre>breadcrumb</pre></span></td>
+      <td>Defined list for containing the breadcrumb items.</td>
+      <td>Required on a list element - ol/ul</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

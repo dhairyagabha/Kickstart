@@ -32,7 +32,7 @@ class Admin::AnnouncementsController < Admin::BaseController
 
   private
   def announcement_params
-    params.require(:announcement).permit(:announcement_type, :name, :description, :image)
+    params.require(:announcement).permit(:announcement_type, :name, :description)
   end
 
 end

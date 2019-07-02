@@ -1,0 +1,13 @@
+<div class="card card-shadow">
+  <div class="card-header">
+    <div class="card-title">
+      <%= text.title %>
+    </div>
+  </div>
+  <div class="card-body">
+    <%= truncate(strip_tags(text.content.body.html_safe), length: 250, escape: true) %>
+  </div>
+  <div class="card-actions">
+    <%= link_to 'Read More', guides_text_path(text), class:'btn btn-primary' %>
+  </div>
+</div>

@@ -1,50 +1,52 @@
 <%= content_for :title, 'Home' %>
-<div class="header">
-  <div class="header-caption text-center">
-    <h1>
-      Hello World!
-    </h1>
-    <%= link_to 'Click Here', '', class:'btn btn-success-outline' %>
-  </div>
-</div>
+<%= render partial:'shared/secondary', locals:{ link_active: 'About' } %>
+<%= content_for :body_classes, 'secondary-nav-content' %>
+
 <div class="content">
   <div class="container">
     <section class="text-center">
-      <h2>Why our product is the best</h2>
+      <h2>Kickstart</h2>
       <p>
-        This is the paragraph where you can write more details about your product. Keep you user engaged by providing
-        meaningful information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get
-        here. Add a button if you want the user to see more.
+        Kickstart is a rails template library that includes custom css library, javascript/coffeescript and HTML
+        templates/scaffolds. Provides a mobile responsive layout with all the modern essential components such as
+        buttons, card, checkboxes, dropdowns, modals, etc. A number of components are strictly designed to follow modern
+        user expectations and engagement, so it might require custom work depending on your needs. Some of the design
+        concepts are explained along with the components.
       </p>
       <div class="row">
         <div class="col-md-4 col-sm-12">
-          <h3>Top Feature #1</h3>
+          <h3>Templates</h3>
           <p>
-            Divide details about your product or agency work into parts. Write a few lines about each one.
-            A paragraph describing a feature will be enough.
+            Designing a product or website is quite a time intensive endeavour. It is often a great help to start with a
+            basic template and go forward with the rest. Please explore the templates shared and chose your favorite.
           </p>
         </div>
         <div class="col-md-4 col-sm-12">
-          <h3>Top Feature #2</h3>
+          <h3>Components</h3>
           <p>
-            Divide details about your product or agency work into parts. Write a few lines about each one.
-            A paragraph describing a feature will be enough.
+            Components are at the core of a consistent experience on any website or product. Kickstart attempts to
+            design the standard components with simplicity and modern expectations in mind. Check out the components to
+            build your own custom layout.
           </p>
         </div>
         <div class="col-md-4 col-sm-12">
-          <h3>Top Feature #3</h3>
+          <h3>Styles</h3>
           <p>
+            TO BE UPDATED
             Divide details about your product or agency work into parts. Write a few lines about each one.
             A paragraph describing a feature will be enough.
           </p>
         </div>
       </div>
       <p>
-        <%= link_to 'Get Started Today', new_user_registration_path,class:'btn btn-primary-outline' %>
+        Get started today by creating your new rails app with Kickstart here!
+      </p>
+      <p>
+        <%= link_to 'Get Started Today', new_user_registration_path, class: 'btn btn-primary-outline' %>
       </p>
     </section>
     <section class="review text-center">
-      <h2>Our Clients Love Us</h2>
+      <h2>Our Users Love Us</h2>
       <p>
         You need more information? Check what other persons are saying about our product.
         <br/>
@@ -54,7 +56,8 @@
           <div class="card card-shadow text-left">
             <div class="card-body">
               <p>
-                Your products, all the kits that I have downloaded from your site and worked with are sooo cool! I love the color mixtures, cards... everything. Keep up the great work!
+                Your products, all the kits that I have downloaded from your site and worked with are sooo cool! I love
+                the color mixtures, cards... everything. Keep up the great work!
               </p>
               <p class="text-right">
                 &mdash; Author name
@@ -66,7 +69,8 @@
           <div class="card card-shadow text-left">
             <div class="card-body">
               <p>
-                Your products, all the kits that I have downloaded from your site and worked with are sooo cool! I love the color mixtures, cards... everything. Keep up the great work!
+                Your products, all the kits that I have downloaded from your site and worked with are sooo cool! I love
+                the color mixtures, cards... everything. Keep up the great work!
               </p>
               <p class="text-right">
                 &mdash; Author name
@@ -78,7 +82,8 @@
           <div class="card card-shadow text-left">
             <div class="card-body">
               <p>
-                Your products, all the kits that I have downloaded from your site and worked with are sooo cool! I love the color mixtures, cards... everything. Keep up the great work!
+                Your products, all the kits that I have downloaded from your site and worked with are sooo cool! I love
+                the color mixtures, cards... everything. Keep up the great work!
               </p>
               <p class="text-right">
                 &mdash; Author name

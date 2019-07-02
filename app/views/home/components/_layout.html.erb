@@ -1,0 +1,156 @@
+<div class="tabs-panel  <%= @component == 'layout' ? 'active' : '' %>" id="Layout">
+  <h2>Layout</h2>
+  <p><strong>INTRODUCTION</strong></p>
+  <p>The Kickstart <b>layout</b> component is a comprehensive approach to page layout that uses Kickstart development
+    tenets, allows for efficient use of Kickstart components, and automatically adapts to different browsers, screen
+    sizes, and devices.</p>
+  <p>Appropriate and accessible layout is a critical feature of all user interfaces, regardless of a site's content or
+    function. Page design and presentation is therefore an important factor in the overall user experience.</p>
+  <p>Use of Kickstart layout principles simplifies the creation of scalable pages by providing reusable components and
+    encourages consistency across environments by establishing recognizable visual elements, adhering to logical
+    structural grids, and maintaining appropriate spacing across multiple platforms and screen sizes. Kickstart layout
+    is extremely powerful and dynamic, allowing fo great consistency in outward appearance and behavior while
+    maintaining development flexibility and ease of use.</p>
+  <p><strong>NAVIGATION LAYOUTS</strong></p>
+  <p>BASIC NAVIGATION</p>
+  <div class="demo-layouts">
+    <nav>
+      <div class="flex-navbar">
+        <a class="navbar-brand" href="/">Title</a>
+        <button class="mobile-toggle">Menu</button>
+        <ul>
+          <li><a href="">Link 1</a></li>
+          <li><a href="">Link 2</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <div class="content">
+        <div class="container">
+          <h1 class="text-center">Basic Navigation</h1>
+        </div>
+      </div>
+    </main>
+  </div>
+  <iframe width="100%" height="300" src="//jsfiddle.net/dgabhawala/up0gb87z/embedded/html/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>    </li>
+  <p>SECONDARY NAVIGATION</p>
+  <div class="demo-layouts">
+    <nav>
+      <div class="flex-navbar">
+        <a class="navbar-brand" href="/">Title</a>
+        <button class="mobile-toggle">Menu</button>
+        <ul>
+          <li><a href="">Link 1</a></li>
+          <li><a href="">Link 2</a></li>
+        </ul>
+      </div>
+      <div class="secondary-nav">
+        <ul>
+          <li class="nav-link-active"><a href="">Link 1</a></li>
+          <li class=""><a href="">Link 2</a></li>
+          <li class=""><a href="">Link 3</a></li>
+          <li class=""><a href="">Link 4</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="secondary-nav-content">
+      <div class="content">
+        <div class="container">
+          <h1 class="text-center">Secondary Navigation</h1>
+        </div>
+      </div>
+    </main>
+  </div>
+  <iframe width="100%" height="300" src="//jsfiddle.net/dgabhawala/crmkLa6u/embedded/html/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>    </li>
+  <p>SIDE DRAWER NAVIGATION</p>
+  <div class="demo-layouts">
+    <nav>
+      <div class="flex-navbar">
+        <div class="navbar-brand">
+          <span class="drawer-menu-toggle" data-menu="nav1" data-obfuscator="obs1"><i class="fas fa-bars"></i></span>
+          <a href="/">Title</a>
+        </div>
+        <button class="mobile-toggle">Menu</button>
+        <ul>
+          <li><a href="">Link 1</a></li>
+          <li><a href="">Link 2</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="drawer-menu" id="nav1">
+      <div class="drawer-menu-title">Title</div>
+      <nav>
+        <a href="">Link 1</a>
+        <a href="">Link 2</a>
+        <a href="">Link 3</a>
+        <a href="">Link 4</a>
+      </nav>
+    </div>
+    <div class="drawer-obfuscator" id="obs1" data-menu="nav1" data-obfuscator="obs1"></div>
+    <main>
+      <div class="content">
+        <div class="container">
+          <h1 class="text-center">Side Drawer Navigation</h1>
+        </div>
+      </div>
+    </main>
+  </div>
+  <iframe width="100%" height="300" src="//jsfiddle.net/dgabhawala/rqpdv0hw/embedded/html/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>    </li>
+
+  <p><strong>SAMPLES</strong></p>
+  <p>TO INCLUDE A <b>KICKSTART Layout</b> COMPONENT:</p>
+  <ol>
+    <li>
+      Code the
+      <pre>body</pre>
+      element. Include any desired attributes and values, such as an id or event handler.
+    </li>
+    <li>
+      Code the
+      <pre>nav</pre>
+      element similar to the structure below first in the body element.
+      <iframe width="100%" height="300" src="//jsfiddle.net/dgabhawala/b6ck1zm5/embedded/html/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>    </li>
+    <li>
+      Add the relevant additional components such as sidebar, secondary nav, etc. as per your requirements. See their documentation for more details.
+    </li>
+    <p>The layout component is ready to use.</p>
+  </ol>
+  <p>CONFIGURATION OPTIONS</p>
+  <p>The Kickstart CSS classes apply various predefined visual enhancements to the layout. The table below lists
+    the available classes and their effects.</p>
+  <table>
+    <thead>
+    <tr>
+      <th>Class</th>
+      <th>Effect</th>
+      <th>Remarks</th>
+    </thead>
+    <tbody>
+    <tr>
+      <td><span><pre>mobile-toggle</pre></span></td>
+      <td>Defines mobile menu toggle button</td>
+      <td>Required on an element</td>
+    </tr>
+    <tr>
+      <td><span><pre>drawer-menu-toggle</pre></span></td>
+      <td>Defines drawer menu toggle button.</td>
+      <td>Required for drawer menu</td>
+    </tr>
+    <tr>
+      <td><span><pre>drawer-menu</pre></span></td>
+      <td>Defines div as drawer menu.</td>
+      <td>Required for drawer menu</td>
+    </tr>
+    <tr>
+      <td><span><pre>drawer-menu-title</pre></span></td>
+      <td>Defines the title of the drawer menu</td>
+      <td>Optional - Usually for the Application Name</td>
+    </tr>
+    <tr>
+      <td><span><pre>drawer-obfuscator</pre></span></td>
+      <td>Defines obfuscator for when drawer is open.</td>
+      <td>Required on an element</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

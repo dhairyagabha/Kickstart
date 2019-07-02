@@ -1,0 +1,37 @@
+<%= content_for :title, 'Components' %>
+<%= render partial: 'shared/secondary', locals: {link_active: 'Components'} %>
+<%= content_for :body_classes, 'secondary-nav-content' %>
+<div class="content">
+  <div class="container">
+    <div class="tabs">
+      <div class="tabs-header">
+        <%= link_to 'Alerts', components_path(component: 'alerts'), class: "#{@component == 'alerts' ? 'active' : ''}" %>
+        <%= link_to 'Badges', components_path(component: 'badges'), class: "#{@component == 'badges' ? 'active' : ''}" %>
+        <%= link_to 'Breadcrumbs', components_path(component: 'breadcrumbs'), class: "#{@component == 'breadcrumbs' ? 'active' : ''}" %>
+        <%= link_to 'Buttons', components_path(component: 'buttons'), class: "#{@component == 'buttons' ? 'active' : ''}" %>
+        <%= link_to 'Cards', components_path(component: 'cards'), class: "#{@component == 'cards' ? 'active' : ''}" %>
+        <%= link_to 'Dialogs', components_path(component: 'dialogs'), class: "#{@component == 'dialogs' ? 'active' : ''}" %>
+        <%= link_to 'Layout', components_path(component: 'layout'), class: "#{@component == 'layout' ? 'active' : ''}" %>
+        <%= link_to 'List Group', components_path(component: 'lists'), class: "#{@component == 'lists' ? 'active' : ''}" %>
+        <%= link_to 'Loading', components_path(component: 'loading'), class: "#{@component == 'loading' ? 'active' : ''}" %>
+        <%= link_to 'Menu', components_path(component: 'menu'), class: "#{@component == 'menu' ? 'active' : ''}" %>
+        <%= link_to 'Tables', components_path(component: 'tables'), class: "#{@component == 'tables' ? 'active' : ''}" %>
+        <%= link_to 'Forms', components_path(component: 'forms'), class: "#{@component == 'forms' ? 'active' : ''}" %>
+      </div>
+      <div class="tabs-panels">
+        <%= render 'home/components/alerts' %>
+        <%= render 'home/components/badges' %>
+        <%= render 'home/components/breadcrumbs' %>
+        <%= render 'home/components/buttons' %>
+        <%= render 'home/components/cards' %>
+        <%= render 'home/components/dialogs' %>
+        <%= render 'home/components/layout' %>
+        <%= render 'home/components/lists' %>
+        <div class="tabs-panel" id="Loading">Loading</div>
+        <div class="tabs-panel" id="Menu">Menu</div>
+        <div class="tabs-panel" id="Tables">Tables</div>
+        <div class="tabs-panel" id="Forms">Forms</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="content">
+  <div class="container text-center">
+    <h1 class="title">
+      Master our product
+    </h1>
+    <p class="subtitle">
+      For those who like to read and follow along, articles here will have you up and running in no time.
+    </p>
+    <p class="text-center">
+      <%= link_to 'Video Guides &rarr;'.html_safe, guides_videos_path, class:'btn btn-primary-outline' %>
+    </p>
+    <div class="video-guides-collection">
+      <%= render @guides_texts %>
+    </div>
+  </div>
+</div>

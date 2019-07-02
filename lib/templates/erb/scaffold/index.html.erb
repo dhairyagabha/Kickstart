@@ -6,20 +6,16 @@
       <div class="card table-card card-shadow">
         <div class="card-header">
           <div class="card-title">
-            <%= plural_table_name.capitalize %>
+            <%%= plural_table_name.capitalize %>
           </div>
           <div class="card-menu">
-            <%= link_to '#', class:'icon-button search' do %>
-              <i class="fas fa-search"></i>
-            <% end %>
+            <%%= link_to '<i class="fas fa-search"></i>'.html_safe, '#', class:'icon-button search' %>
             <div class="icon-button dropdown">
-              <%= link_to '#', {data:{toggle:'.dropdown-menu', toggle_class:'active'}, class:''} do %>
-                <i class="fas fa-ellipsis-v"></i>
-              <% end %>
+              <%%= link_to '<i class="fas fa-ellipsis-v"></i>'.html_safe, '#', {data:{toggle:'.dropdown-menu', toggle_class:'active'}, class:''} %>
               <ul class="dropdown-menu">
                 <li>
-                  <%%= link_to new_<%= singular_table_name %>_path do %>
-                  New <%= human_name %>
+                  <%%= link_to new_<%%= singular_table_name %>_path do %>
+                  New <%%= human_name %>
                   <%% end %>
                 </li>
               </ul>
@@ -28,10 +24,8 @@
         </div>
         <div class="card-body">
           <div class="card-table-search">
-            <%= text_field_tag :search, nil, placeholder: :Search %>
-            <%= link_to '#',class:'close-search' do %>
-              &times;
-            <% end %>
+            <%%= text_field_tag :search, nil, placeholder: :Search %>
+            <%%= link_to '&times;'.html_safe, '#',class:'close-search' %>
           </div>
           <table>
             <thead>
@@ -40,7 +34,7 @@
                 <th>Name</th>
               <% end %>
               <% attributes.without(name_attribute).each do |attribute| -%>
-                <th><%= attribute.human_name %></th>
+                <th><%%= attribute.human_name %></th>
               <% end -%>
               <% unless has_name %>
                 <th></th>
@@ -48,18 +42,18 @@
             </tr>
             </thead>
             <tbody>
-            <%% @<%= plural_table_name%>.each do |<%= singular_table_name %>| %>
-            <%%= content_tag :tr, id: dom_id(<%= singular_table_name %>), class: dom_class(<%= singular_table_name %>) do %>
+            <%% @<%%= plural_table_name%>.each do |<%%= singular_table_name %>| %>
+            <%%= content_tag :tr, id: dom_id(<%%= singular_table_name %>), class: dom_class(<%%= singular_table_name %>) do %>
             <% if has_name %>
-              <td class="text-center"><%%= link_to <%= singular_table_name %>.name, <%= singular_table_name %> %></td>
+              <td class="text-center"><%%= link_to <%%= singular_table_name %>.name, <%%= singular_table_name %> %></td>
             <% end %>
 
             <% attributes.without(name_attribute).each do |attribute| -%>
-              <td class="text-center"><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+              <td class="text-center"><%%= <%%= singular_table_name %>.<%%= attribute.name %> %></td>
             <% end -%>
 
             <% unless has_name %>
-              <td class="text-center"><%%= link_to 'Show', <%= singular_table_name %> %></td>
+              <td class="text-center"><%%= link_to 'Show', <%%= singular_table_name %> %></td>
             <% end %>
             <%% end %>
             <%% end %>

@@ -1,39 +1,16 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
-  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
-  <% if content_for?(:meta_description) %>
-    <meta content="<%= (yield :meta_description) %>" name="description"/>
-  <% end %>
-  <title><%= Rails.configuration.application_name %> | <%= yield :title %></title>
-  <%= csrf_meta_tags %>
-  <% #Replace this with your preference of fonts %>
-  <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i' %>
-  <%= stylesheet_link_tag    'application', 'admin/application', media: 'all', :'data-turbolinks-track' => 'reload' %>
-  <%= javascript_include_tag 'application', 'admin/application', :'data-turbolinks-track' => 'reload' %>
+  <%= render 'shared/head' %>
 </head>
+
 <body>
-<%= render partial: 'shared/admin/header' %>
+<%= render 'shared/admin/header' %>
 <main class="<%= (yield :body_classes) %>">
-  <% if alert %>
-    <div class="alert alert-danger">
-      <p>
-        <%= alert %>
-      </p>
-      <%= link_to '&times;'.html_safe, '#', data: {dismiss: 'alert'} %>
-    </div>
-  <% end %>
-  <% if notice %>
-    <div class="alert alert-success">
-      <p>
-        <%= notice %>
-      </p>
-      <%= link_to '&times;'.html_safe, '#', data: {dismiss: 'alert'} %>
-    </div>
-  <% end %>
+  <%= render 'shared/notices' %>
   <%= yield %>
 </main>
-<script crossorigin="anonymous" defer="<%= true %>" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
+<%= render 'shared/footer' %>
+<script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
 </body>
 </html>

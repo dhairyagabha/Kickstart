@@ -1,12 +1,12 @@
 <div class="col-md-10 mx-auto col-12">
-  <div class="announcement">
+  <div class="announcement announcement-<%= announcement.announcement_type %>">
     <div class="announcement-separator mx-auto"></div>
-    <h3>
-      <%= announcement.name %>
+    <h3 class="announcement-header">
+      <%= announcement.announcement_type.humanize %>: <%= announcement.name %>
     </h3>
+    <p><%= announcement.published_at.strftime('%d %b, %Y - %H : %M %p') %></p>
     <div>
       <%= announcement.description %>
-      <%= image_tag announcement.image.url, class:'img-fluid rounded' if announcement.image.present? %>
     </div>
   </div>
 </div>

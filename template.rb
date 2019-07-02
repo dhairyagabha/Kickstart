@@ -127,8 +127,8 @@ def add_users
   end
 
   generate "devise_invitable:install"
-  generate "devise_invitable:views"
   generate :devise_invitable, "User"
+  generate "devise_invitable:views"
 
   if Gem::Requirement.new("> 5.2").satisfied_by? rails_version
     gsub_file "config/initializers/devise.rb",
@@ -137,7 +137,7 @@ def add_users
   end
 
   # Add Devise masqueradable to users
-  inject_into_file("app/models/user.rb", "omniauthable, :masqueradable, :confirmable, :trackable, :lockable, :", after: "devise :")
+  inject_into_file("app/models/user.rb", "omniauthable, :masqueradable, :confirmable, :trackable, :lockable, :invitable, :", after: "devise :")
 end
 
 def initiate_api
@@ -216,6 +216,7 @@ def add_guides
   generate "model guides/video name:string description:text video_link:string"
   guides_content = <<-RUBY
     namespace :guides do
+      resources :texts
       resources :videos
     end
   RUBY
@@ -254,10 +255,12 @@ end
 def add_admin
   admin_content = <<-RUBY
     namespace :admin do
-      resources :guides
+      resources :users
       namespace :guides do
         resources :videos
+        resources :texts
       end
+      resources :guides
       resources :announcements
       resource :dashboard
       root to: "announcements#index"
@@ -311,7 +314,7 @@ end
 def add_database_credentials
   insert_into_file(
       Dir["config/database.yml"].first,
-      "username: development\npassword: typepassword",
+      "username: USERNAME\npassword: PASSWORD", # Replace with your Username and Password if you want to set up database creation and migration.
       after: "pool: <%= ENV.fetch(\"RAILS_MAX_THREADS\") { 5 } %>\n"
   )
 end
@@ -343,8 +346,8 @@ after_bundle do
   add_database_credentials
 
   # Migrate
-  rails_command "db:create"
-  rails_command "db:migrate"
+  # rails_command "db:create"
+  # rails_command "db:migrate"
 
   # Migrations must be done before this
   # add_administrate

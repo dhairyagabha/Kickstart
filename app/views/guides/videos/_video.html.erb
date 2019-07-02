@@ -3,16 +3,17 @@
   <div class="row m-0">
     <div class="col-md-5 col-12">
       <div class="video-guide-title">
-        <%= video.name %>
+        <%= video.title %>
       </div>
       <div class="video-guide-description">
-        <%= video.description %>
+        <%= truncate(strip_tags(video.content.body.html_safe), length: 500, escape: true) %>
       </div>
+      <%= link_to 'Read More', guides_video_path(video), class:'btn btn-primary' %>
     </div>
     <div class="col-md-7 col-12">
       <div class="video-guide-video">
         <figure class="video-embed">
-          <iframe allowfullscreen="<%= true %>" frameborder="0" src="<%= video.video_link %>"></iframe>
+          <iframe src="<%= video.video_link.gsub('watch?v=','embed/') %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </figure>
       </div>
     </div>

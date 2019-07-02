@@ -1,0 +1,227 @@
+<div class="tabs-panel  <%= @component == 'cards' ? 'active' : '' %>" id="Cards">
+  <h2>Cards</h2>
+  <p><strong>INTRODUCTION</strong></p>
+  <p>The Kickstart <b>card</b> component is a user interface element representing a virtual piece of paper that contains
+    related data - such as a photo, some text, and a link - that are all about a single subject.</p>
+
+  <p>Cards are convenient means of coherently displaying related content that is composed of different types of objects.
+    They are also well-suited for presenting similar objects whose size or supported actions can vary considerably, like
+    photos with captions of variable length. Cards have a constant width and a variable height, depending on their
+    content.</p>
+  <p>
+    Cards are a fairly new feature in user interfaces, and allow users an access point to more complex and detailed
+    information. Their design and use is an important factor in the overall user experience. See the card components
+    specifications for details.
+  </p>
+  <p><strong>SAMPLES</strong></p>
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-sm-12">
+      <div class="col-12 text-left"><p><b>Regular Card</b></p></div>
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Card Title</div>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+              has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+              leap into electronic typesetting, remaining essentially unchanged.</p>
+          </div>
+          <div class="card-actions">
+            <%= link_to 'Go Somewhere', '#', class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <iframe width="100%" height="350" src="//jsfiddle.net/dgabhawala/3emyva0u/embedded/html/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <div class="col-12 text-left"><p><b>Shadowed Card</b></p></div>
+      <div class="col-12">
+        <div class="card card-shadow">
+          <div class="card-header">
+            <div class="card-title">Card Title</div>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+              has been the
+              industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged.</p>
+          </div>
+          <div class="card-actions">
+            <%= link_to 'Go Somewhere', '#', class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <iframe width="100%" height="350" src="//jsfiddle.net/dgabhawala/q2g38own/2/embedded/html/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card card-primary">
+        <div class="card-header">
+          <div class="card-title">
+            Card Title
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+            galley of type and
+            scrambled it to make a type specimen book.
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="#">Go Somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card card-secondary">
+        <div class="card-header">
+          <div class="card-title">
+            Card Title
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+            galley of type and
+            scrambled it to make a type specimen book.
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="#">Go Somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card card-info">
+        <div class="card-header">
+          <div class="card-title">
+            Card Title
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+            galley of type and
+            scrambled it to make a type specimen book.
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="#">Go Somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card card-warning">
+        <div class="card-header">
+          <div class="card-title">
+            Card Title
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+            galley of type and
+            scrambled it to make a type specimen book.
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="#">Go Somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card card-success">
+        <div class="card-header">
+          <div class="card-title">
+            Card Title
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+            galley of type and
+            scrambled it to make a type specimen book.
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="#">Go Somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card card-light">
+        <div class="card-header">
+          <div class="card-title">
+            Card Title
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+            galley of type and
+            scrambled it to make a type specimen book.
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="#">Go Somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p>TO INCLUDE A <b>KICKSTART CARD</b> COMPONENT:</p>
+  <ol>
+    <li>
+      Code a
+      <pre>div</pre>
+      element. Include any desired attributes and values, such as an id or event handler. Below is the card structure.
+    </li>
+    <iframe width="100%" height="300" src="//jsfiddle.net/dgabhawala/epy7fj1t/embedded/html/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+    <p>The card component is ready to use.</p>
+  </ol>
+  <p>CONFIGURATION OPTIONS</p>
+  <p>The Kickstart CSS classes apply various predefined visual enhancements to the card. The table below lists
+    the available classes and their effects.</p>
+  <table>
+    <thead>
+    <tr>
+      <th>Class</th>
+      <th>Effect</th>
+      <th>Remarks</th>
+    </thead>
+    <tbody>
+    <tr>
+      <td><span><pre>card</pre></span></td>
+      <td>Defines div as Kickstart card component</td>
+      <td>Required on an element</td>
+    </tr>
+    <tr>
+      <td><span><pre>card-header</pre></span></td>
+      <td>Defines card header div</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><span><pre>card-body</pre></span></td>
+      <td>Defines card body div</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><span><pre>card-actions</pre></span></td>
+      <td>Defines card actions div. Usually used for actions and interactions</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><span><pre>card-primary</pre> <pre>card-secondary</pre><br/><pre>card-light</pre> <pre>card-dark</pre><br/><pre>card-success</pre> <pre>card-info</pre><br/><pre>card-warning</pre></span>
+      </td>
+      <td>Defines card actions div. Usually used for actions and interactions</td>
+      <td>Optional</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
