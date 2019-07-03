@@ -74,6 +74,9 @@ def set_essentials
   gsub_file "Gemfile", /# gem 'image_processing', '~> 1.2'/, "gem 'image_processing', '~> 1.2'"
   rails_command "action_text:install"
   rails_command "active_storage:install"
+  environment "mattr_accessor(:sanitizer) {Rails::Html::Sanitizer.white_list_sanitizer.new}"
+  environment "config.action_view.sanitized_allowed_tags = sanitizer.class.allowed_tags + [ ActionText::Attachment::TAG_NAME, 'figure', 'figcaption', 'highlight' ]"
+  environment "config.action_view.sanitized_allowed_attributes = sanitizer.class.allowed_attributes + [ActionText::Attachment::ATTRIBUTES, 'class']"
 end
 
 def set_application_name
@@ -115,7 +118,8 @@ def add_users
            "first_name",
            "last_name",
            "announcements_last_read_at:datetime",
-           "admin:boolean"
+           "admin:boolean",
+           "timezone:string"
 
 
   # Set admin default to false
@@ -154,7 +158,7 @@ def add_webpack
 end
 
 def add_javascript
-  run "yarn add expose-loader jquery popper.js bootstrap data-confirm-modal local-time"
+  run "yarn add expose-loader data-confirm-modal local-time"
 
   if rails_5?
     run "yarn add turbolinks @rails/actioncable@pre @rails/actiontext@pre @rails/activestorage@pre @rails/ujs@pre"
@@ -163,8 +167,6 @@ def add_javascript
   content = <<-JS
 const webpack = require('webpack')
 environment.plugins.append('Provide', new webpack.ProvidePlugin({
-  $: 'jquery',
-  jQuery: 'jquery',
   Rails: '@rails/ujs'
 }))
   JS
@@ -213,7 +215,8 @@ def add_notifications
 end
 
 def add_guides
-  generate "model guides/video name:string description:text video_link:string"
+  generate "model guides/video name:string video_link:string"
+  generate "model guides/text name:string"
   guides_content = <<-RUBY
     namespace :guides do
       resources :texts
@@ -263,7 +266,7 @@ def add_admin
       resources :guides
       resources :announcements
       resource :dashboard
-      root to: "announcements#index"
+      root to: "dashboard#index"
     end
   RUBY
   insert_into_file "config/routes.rb", "#Admin Routes \n#{admin_content}\n\n", after: "Rails.application.routes.draw do\n"

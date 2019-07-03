@@ -9,10 +9,16 @@
               <%= devise_error_messages! %>
             </small>
             <div class="form-field">
+              <%= f.label :name %>
               <%= f.text_field :name, placeholder: :name, autofocus: true, autocomplete: "full name" %>
             </div>
             <div class="form-field">
+              <%= f.label :email %>
               <%= f.email_field :email, placeholder: :email, autocomplete: "email" %>
+            </div>
+            <div class="form-field">
+              <%= f.label :timezone %>
+              <%= f.time_zone_select :timezone %>
             </div>
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <div>
@@ -20,15 +26,18 @@
               </div>
             <% end %>
             <div class="form-field">
+              <%= f.label :password %>
               <%= f.password_field :password, placeholder: :password, autocomplete: "off" %>
               <p>
                 Leave password blank if you don't want to change it
               </p>
             </div>
             <div class="form-field">
+              <%= f.label :password_confirmation %>
               <%= f.password_field :password_confirmation, placeholder: :password_confirmation, autocomplete: "off" %>
             </div>
             <div class="form-field">
+              <%= f.label :current_password %>
               <%= f.password_field :current_password, placeholder: :current_password, autocomplete: "off" %>
               <p>
                 We need your current password to confirm your changes

@@ -25,6 +25,26 @@ form{
       transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
       font-family: 'Ubuntu', sans-serif;
     }
+    select{
+      position: relative;
+      display: block;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 100%;
+      background-color: #fff;
+      border-width: 1px;
+      border-color: #ced4da;
+      color: #495057;
+      padding: .75rem 2rem .75rem 1rem;
+      border-radius: .25rem;
+      font-size: 1rem;
+      line-height: 1.25;
+      cursor: pointer;
+      &:after{
+        content: " \2191";
+      }
+    }
     &.checkbox{
       display: flex;
     }
