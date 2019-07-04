@@ -74,9 +74,9 @@ def set_essentials
   gsub_file "Gemfile", /# gem 'image_processing', '~> 1.2'/, "gem 'image_processing', '~> 1.2'"
   rails_command "action_text:install"
   rails_command "active_storage:install"
-  environment "mattr_accessor(:sanitizer) {Rails::Html::Sanitizer.white_list_sanitizer.new}"
-  environment "config.action_view.sanitized_allowed_tags = sanitizer.class.allowed_tags + [ ActionText::Attachment::TAG_NAME, 'figure', 'figcaption', 'highlight' ]"
-  environment "config.action_view.sanitized_allowed_attributes = sanitizer.class.allowed_attributes + [ActionText::Attachment::ATTRIBUTES, 'class']"
+  # environment "mattr_accessor(:sanitizer) {Rails::Html::Sanitizer.white_list_sanitizer.new}"
+  # environment "config.action_view.sanitized_allowed_tags = sanitizer.class.allowed_tags + [ ActionText::Attachment::TAG_NAME, 'figure', 'figcaption', 'highlight' ]"
+  # environment "config.action_view.sanitized_allowed_attributes = sanitizer.class.allowed_attributes + [ActionText::Attachment::ATTRIBUTES, 'class']"
 end
 
 def set_application_name
